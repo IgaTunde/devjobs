@@ -40,7 +40,7 @@ export function ThemeToggle() {
       {/* Toggle Switch */}
       <button
         onClick={() => setTheme(isDark ? "light" : "dark")}
-        className="relative w-12 h-6 bg-white dark:bg-blue-600 rounded-full transition-colors duration-300"
+        className="relative w-12 h-6 bg-white dark:bg-indigo-500 rounded-full transition-colors duration-300"
         aria-label="Toggle theme"
       >
         <span

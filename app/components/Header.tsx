@@ -11,6 +11,7 @@ const Header = () => {
           width={115}
           height={32}
         />
+     
         <ThemeToggle/>
       </div>
     </header>
