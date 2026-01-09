@@ -23,11 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={` ${kumbhSans.variable} antialiased min-h-screen`}
+        className={` ${kumbhSans.variable} antialiased min-h-screen `}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <Header />
-        <div className="px-4 sm:px-6 lg:px-8">{children}</div>
+        <div className="px-4 sm:px-6 lg:px-32">{children}</div>
         </ThemeProvider>
       </body>
     </html>
