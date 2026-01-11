@@ -1,9 +1,10 @@
+"use-client"
 import Image from "next/image";
-import React from "react";
+import CustomCheckbox from "./CustomCheckbox";
 
 const SearchBar = () => {
   return (
-    <div className="w-full max-w-[1110px] bg-white dark:bg-slate-900 rounded-md shadow-sm overflow-hidden">
+    <div className="w-full max-w-[1110px] bg-white dark:bg-slate-900 rounded-md shadow-sm overflow-hidden lg:py-2 ">
       <div className="sm:flex flex-col md:flex-row items-stretch hidden">
         {/* Title / search */}
         <div className="flex items-center gap-3 px-4 py-3 flex-1">
@@ -13,8 +14,8 @@ const SearchBar = () => {
             width={24}
             height={24}
           />
-          <span className="text-sm text-gray-500 dark:text-slate-400">
-            Filter by title, companies, expertise...
+          <span className="text-sm text-slate-950 opacity-50 dark:text-slate-950">
+            Filter by title,<span className="lg:inline hidden"> companies, expertise</span>...
           </span>
         </div>
 
@@ -26,59 +27,46 @@ const SearchBar = () => {
             width={17}
             height={24}
           />
-          <span className="text-sm text-gray-500 dark:text-slate-400">
+          <span className="text-sm text-slate-950 opacity-50 dark:text-white">
             Filter by location...
           </span>
         </div>
 
         <div className="hidden md:flex flex-1 items-center justify-center gap-3 px-4 py-3">
-          <Image
-            src="/assets/desktop/icon-check.svg"
+          {/* <Image
+            src="/assets/desktop/icon-location.svg"
             alt="full time icon"
             width={24}
             height={24}
-          />
-          <span className="text-sm text-gray-500 dark:text-slate-400">
+          /> */} <CustomCheckbox label="Full Time Only"/>
+          {/* <span className="text-sm text-slate-950 font-bold dark:text-white">
             Full Time Only
+          </span> */}
+          <span className="text-sm text-white font-bold dark:text-white bg-indigo-500 rounded-md py-2 px-8">
+       Search
           </span>
         </div>
-
-        {/* <div className="md:hidden flex items-center gap-3 px-4 py-3 border-t border-slate-200 dark:border-slate-700">
-          <Image
-            src="/assets/desktop/icon-check.svg"
-            alt="full time icon"
-            width={24}
-            height={24}
-          />
-          <span className="text-sm text-gray-500 dark:text-slate-400">
-            Full Time Only
-          </span>
-        </div> */}
       </div>
-      {/* Mobile stacked layout (visible below md) */}
-      <div className="md:hidden flex items-center justify-between gap-3 px-4 py-3 border-t border-slate-200 dark:border-slate-700">
+      {/* Mobile (visible below md) */}
+      <div className="sm:hidden flex items-center justify-between gap-3 px-4 py-3 border-t border-slate-200 dark:border-slate-700">
         <span className="text-sm opacity-50 text-gray-500 dark:text-slate-400">
           Filter by title...
         </span>
         <div className="flex items-center gap-4">
-
-        <Image
-          src="/assets/mobile/icon-filter.svg"
-          alt="location icon"
-          width={17}
-          height={24}
-      
-        />
-        <div className="bg-indigo-500 justify-center, items-center flex p-2 rounded-md">
-
-        <Image
-          src="/assets/mobile/icon-search-white.svg"
-          alt="location icon"
-          width={20}
-          height={20}
-      
-        />
-        </div>
+          <Image
+            src="/assets/mobile/icon-filter.svg"
+            alt="location icon"
+            width={17}
+            height={24}
+          />
+          <div className="bg-indigo-500 justify-center, items-center flex p-2 rounded-md">
+            <Image
+              src="/assets/mobile/icon-search-white.svg"
+              alt="location icon"
+              width={20}
+              height={20}
+            />
+          </div>
         </div>
       </div>
     </div>
