@@ -57,7 +57,7 @@ const SearchBar = () => {
       </div>
       {/* Mobile stacked layout (visible below md) */}
       <div className="md:hidden flex items-center justify-between gap-3 px-4 py-3 border-t border-slate-200 dark:border-slate-700">
-        <span className="text-sm text-gray-500 dark:text-slate-400">
+        <span className="text-sm opacity-50 text-gray-500 dark:text-slate-400">
           Filter by title...
         </span>
         <div className="flex items-center gap-4">
@@ -69,13 +69,16 @@ const SearchBar = () => {
           height={24}
       
         />
+        <div className="bg-indigo-500 justify-center, items-center flex p-2 rounded-md">
+
         <Image
-          src="/assets/desktop/icon-search.svg"
+          src="/assets/mobile/icon-search-white.svg"
           alt="location icon"
-          width={17}
-          height={24}
+          width={20}
+          height={20}
       
         />
+        </div>
         </div>
       </div>
     </div>

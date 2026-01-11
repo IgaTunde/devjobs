@@ -27,7 +27,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         <Header />
-        <div className="px-4 sm:px-6 lg:px-32">{children}</div>
+        <div className="px-8 sm:px-6 lg:px-32">{children}</div>
         </ThemeProvider>
       </body>
     </html>
