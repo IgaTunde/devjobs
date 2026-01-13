@@ -1,9 +1,7 @@
-// components/CustomCheckbox.jsx
-"use client"; // Required for client-side interactivity in newer Next.js versions
-
+"use client";
 import { useState } from "react";
 
-const CustomCheckbox = ({ label }: {label: string}) => {
+const CustomCheckbox = ({ label }: { label: string }) => {
   // Initialize the state for the checkbox with a boolean value
   const [isChecked, setIsChecked] = useState(false);
 
@@ -13,19 +11,16 @@ const CustomCheckbox = ({ label }: {label: string}) => {
   };
 
   return (
-    <div className="checkbox-wrapper">
-      <label>
+    <div className="checkbox-wrapper justify-center items-center flex">
+      <label className="flex items-center">
         <input
+          className="w-5 h-5"
           type="checkbox"
           checked={isChecked} // Use 'checked' property to control the state
           onChange={handleOnChange} // Add the onChange handler
         />
-        <span>{label}</span>
+        <span className="font-bold ml-3">{label}</span>
       </label>
-      {/* Optional: Display the current state */}
-      {/* <p>
-        Is "{label}" checked? **{isChecked.toString()}**
-      </p> */}
     </div>
   );
 };
