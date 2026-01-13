@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-const CustomCheckbox = ({ label }: { label: string }) => {
+const CustomCheckbox = ({ label, className = "" }: { label: string; className?: string }) => {
   // Initialize the state for the checkbox with a boolean value
   const [isChecked, setIsChecked] = useState(false);
 
@@ -11,7 +11,7 @@ const CustomCheckbox = ({ label }: { label: string }) => {
   };
 
   return (
-    <div className="checkbox-wrapper justify-center items-center flex">
+    <div className={`checkbox-wrapper justify-center items-center flex ${className}`}>
       <label className="flex items-center">
         <input
           className="w-5 h-5"
@@ -19,7 +19,7 @@ const CustomCheckbox = ({ label }: { label: string }) => {
           checked={isChecked} // Use 'checked' property to control the state
           onChange={handleOnChange} // Add the onChange handler
         />
-        <span className="font-bold ml-3">{label}</span>
+        <span className="font-bold ml-3 text-sm">{label}</span>
       </label>
     </div>
   );

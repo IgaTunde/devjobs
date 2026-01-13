@@ -4,7 +4,7 @@ import CustomCheckbox from "./CustomCheckbox";
 
 const SearchBar = () => {
   return (
-    <div className="w-full max-w-[1110px]  bg-white dark:bg-slate-900 rounded-md shadow-sm overflow-hidden py-2 z-50 mx-4 sm:mx-6 lg:mx-0 mr-20">
+    <div className="w-full max-w-[1110px]  bg-white dark:bg-slate-900 rounded-md shadow-sm overflow-hidden py-2 z-50 mx-4 sm:mx-6 lg:mx-0 mr-20 ">
       {/* Desktop (md and up) */}
       <div className="hidden md:flex items-stretch">
         {/* Title / search */}
@@ -16,7 +16,8 @@ const SearchBar = () => {
             height={24}
           />
           <span className="text-sm text-slate-950 opacity-50 dark:text-slate-200">
-            Filter by title,<span className="lg:inline hidden"> companies, expertise</span>...
+            Filter by title,
+            <span className="lg:inline hidden"> companies, expertise</span>...
           </span>
         </div>
 
@@ -34,8 +35,16 @@ const SearchBar = () => {
         </div>
 
         <div className="hidden md:flex flex-1 items-center justify-center gap-3 px-4 py-3">
-          <CustomCheckbox label="Full Time Only"/>
-          <button className="text-sm text-white font-bold bg-indigo-500 rounded-md py-2 px-8">
+
+          {/* checkbox for desktop */}
+          <CustomCheckbox
+            label="Full Time Only"
+            className="md:hidden lg:inline-block"
+          />
+          {/* checkbox for tablet */}
+          <CustomCheckbox label="Full Time" className=" lg:hidden" />
+
+          <button className="text-sm text-white font-bold bg-indigo-500 rounded-md py-2 lg:px-8 md:px-4">
             Search
           </button>
         </div>

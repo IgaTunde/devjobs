@@ -4,14 +4,11 @@ export default function Home() {
   return (
     <div className="">
       <main className="">
-        {/* centered wrapper - uses negative margin to overlap header */}
         <div className="flex justify-center items-center">
-          <div className="w-full max-w-[1110px] -mt-12 md:-mt-8 z-50 ">
+          <div className="w-full max-w-[1110px] -mt-12 md:-mt-8 z-50">
             <SearchBar />
           </div>
         </div>
-
-        {/* page content goes here */}
       </main>
     </div>
   );
