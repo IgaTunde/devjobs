@@ -44,7 +44,7 @@ export function ThemeToggle() {
         aria-label="Toggle theme"
       >
         <span
-          className={`absolute top-1 left-1 w-4 h-4 bg-blue-600 rounded-full transition-transform duration-300 ${
+          className={`absolute top-1 left-1 w-4 h-4 bg-indigo-500 rounded-full transition-transform duration-300 ${
             isDark ? "translate-x-6" : "translate-x-0"
           }`}
         />
