@@ -22,12 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={` ${kumbhSans.variable} antialiased min-h-screen `}
-      >
+      <body className={` ${kumbhSans.variable} antialiased min-h-screen `}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <Header />
-        <div className="px-8 sm:px-6 lg:px-32">{children}</div>
+          <Header />
+          <div className="px-4 sm:px-6 lg:px-24">{children}</div>
         </ThemeProvider>
       </body>
     </html>
