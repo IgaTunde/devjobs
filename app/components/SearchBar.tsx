@@ -15,7 +15,7 @@ const SearchBar = () => {
             width={24}
             height={24}
           />
-          <span className="text-sm text-slate-950 opacity-50 dark:text-slate-200">
+          <span className="text-sm text-slate-900 opacity-50 dark:text-white">
             Filter by title,
             <span className="lg:inline hidden"> companies, expertise</span>...
           </span>
@@ -29,7 +29,7 @@ const SearchBar = () => {
             width={17}
             height={24}
           />
-          <span className="text-sm text-slate-950 opacity-50 dark:text-white">
+          <span className="text-sm text-slate-900 opacity-50 dark:text-white">
             Filter by location...
           </span>
         </div>
@@ -51,7 +51,7 @@ const SearchBar = () => {
 
       {/* Mobile & Tablet (below md) */}
       <div className="md:hidden flex items-center justify-between gap-3 px-4 py-2">
-        <span className="text-sm opacity-50 text-gray-500 dark:text-slate-950">
+        <span className="text-sm opacity-50 text-slate-900 dark:text-white ">
           Filter by title...
         </span>
         <div className="flex items-center gap-4">

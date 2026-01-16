@@ -3,7 +3,7 @@ import { Kumbh_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import { ThemeProvider } from "./components/ThemeProvider";
-
+// import { ThemeProvider } from "next-themes";
 
 const kumbhSans = Kumbh_Sans({
   variable: "--font-kumbh-sans",
@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={` ${kumbhSans.variable} antialiased min-h-screen `}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <div className="px-4 sm:px-6 lg:px-24">{children}</div>
+          <div className="px-4 sm:px-6 lg:px-24 transition-all duration-300">{children}</div>
         </ThemeProvider>
       </body>
     </html>

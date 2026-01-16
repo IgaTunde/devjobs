@@ -16,8 +16,8 @@ const CustomCheckbox = ({ label, className = "" }: { label: string; className?: 
         <input
           className="w-5 h-5"
           type="checkbox"
-          checked={isChecked} // Use 'checked' property to control the state
-          onChange={handleOnChange} // Add the onChange handler
+          checked={isChecked} 
+          onChange={handleOnChange} 
         />
         <span className="font-bold ml-3 text-sm">{label}</span>
       </label>
