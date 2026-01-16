@@ -15,7 +15,7 @@ const SearchBar = () => {
             width={24}
             height={24}
           />
-          <span className="text-sm text-slate-900 opacity-50 dark:text-white">
+          <span className="text-sm text-slate-900 opacity-50 dark:text-white  hover:text-slate-950 hover:opacity-100">
             Filter by title,
             <span className="lg:inline hidden"> companies, expertise</span>...
           </span>
@@ -29,7 +29,7 @@ const SearchBar = () => {
             width={17}
             height={24}
           />
-          <span className="text-sm text-slate-900 opacity-50 dark:text-white">
+          <span className="text-sm text-slate-900 opacity-50 dark:text-white hover:text-slate-950 hover:opacity-100">
             Filter by location...
           </span>
         </div>
@@ -43,7 +43,7 @@ const SearchBar = () => {
           {/* checkbox for tablet */}
           <CustomCheckbox label="Full Time" className=" lg:hidden" />
 
-          <button className="text-sm text-white font-bold bg-indigo-500 rounded-md py-2 lg:px-8 md:px-4">
+          <button className="text-sm text-white font-bold bg-indigo-500 rounded-md py-2 lg:px-8 md:px-4 hover:bg-indigo-300">
             Search
           </button>
         </div>

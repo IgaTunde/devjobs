@@ -140,4 +140,7 @@ html.dark {
   body {
     @apply bg-background text-foreground;
   }
+  .activeText {
+   @apply hover:text-slate-950 hover:opacity-100;
+  }
 }
