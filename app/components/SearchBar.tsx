@@ -4,11 +4,11 @@ import CustomCheckbox from "./CustomCheckbox";
 
 const SearchBar = () => {
   return (
-    <div className="w-full max-w-[1110px] bg-white dark:bg-slate-900 rounded-md shadow-sm overflow-hidden z-50 lg:mx-0">
+    <div className="w-full bg-white dark:bg-slate-900 rounded-md shadow-sm overflow-hidden z-50 lg:mx-0 px-4">
       {/* Desktop (md and up) */}
-      <div className="hidden md:flex items-stretch">
+      <div className="hidden md:flex items-stretch justify-between">
         {/* Title / search */}
-        <div className="flex items-center gap-3 px-4 py-3 flex-1">
+        <div className="flex items-center gap-3 py-3 flex-1">
           <Image
             src="/assets/desktop/icon-search.svg"
             alt="search icon"
@@ -34,7 +34,7 @@ const SearchBar = () => {
           </span>
         </div>
 
-        <div className="hidden md:flex flex-1 items-center justify-center gap-3  py-3 border-l border-slate-200 dark:border-slate-700">
+        <div className="hidden md:flex flex-1 items-center justify-between pl-10 py-3 border-l border-slate-200 dark:border-slate-700 ">
           {/* checkbox for desktop */}
           <CustomCheckbox
             label="Full Time Only"

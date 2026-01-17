@@ -5,7 +5,7 @@ export default function Home() {
     <div className="">
       <main className="">
         <div className="flex justify-center items-center">
-          <div className="w-full max-w-[1110px] -mt-7 md:-mt-10 z-50">
+          <div className="w-full -mt-7 md:-mt-8 z-50">
             <SearchBar />
           </div>
         </div>
