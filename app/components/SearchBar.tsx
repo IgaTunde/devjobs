@@ -4,18 +4,18 @@ import CustomCheckbox from "./CustomCheckbox";
 
 const SearchBar = () => {
   return (
-    <div className="w-full max-w-[1110px] bg-white dark:bg-slate-900 rounded-md shadow-sm overflow-hidden z-50 lg:mx-0">
+    <div className="w-full bg-white dark:bg-slate-900 rounded-md shadow-sm overflow-hidden z-50 lg:mx-0 px-4">
       {/* Desktop (md and up) */}
-      <div className="hidden md:flex items-stretch">
+      <div className="hidden md:flex items-stretch justify-between">
         {/* Title / search */}
-        <div className="flex items-center gap-3 px-4 py-3 flex-1">
+        <div className="flex items-center gap-3 py-3 flex-1">
           <Image
             src="/assets/desktop/icon-search.svg"
             alt="search icon"
             width={24}
             height={24}
           />
-          <span className="text-sm text-slate-950 opacity-50 dark:text-slate-200">
+          <span className="text-sm text-slate-900 opacity-50 dark:text-white  hover:text-slate-950 hover:opacity-100">
             Filter by title,
             <span className="lg:inline hidden"> companies, expertise</span>...
           </span>
@@ -29,12 +29,12 @@ const SearchBar = () => {
             width={17}
             height={24}
           />
-          <span className="text-sm text-slate-950 opacity-50 dark:text-white">
+          <span className="text-sm text-slate-900 opacity-50 dark:text-white hover:text-slate-950 hover:opacity-100">
             Filter by location...
           </span>
         </div>
 
-        <div className="hidden md:flex flex-1 items-center justify-center gap-3  py-3 border-l border-slate-200 dark:border-slate-700">
+        <div className="hidden md:flex flex-1 items-center justify-between pl-10 py-3 border-l border-slate-200 dark:border-slate-700 ">
           {/* checkbox for desktop */}
           <CustomCheckbox
             label="Full Time Only"
@@ -43,7 +43,7 @@ const SearchBar = () => {
           {/* checkbox for tablet */}
           <CustomCheckbox label="Full Time" className=" lg:hidden" />
 
-          <button className="text-sm text-white font-bold bg-indigo-500 rounded-md py-2 lg:px-8 md:px-4">
+          <button className="text-sm text-white font-bold bg-indigo-500 rounded-md py-2 lg:px-8 md:px-4 hover:bg-indigo-300">
             Search
           </button>
         </div>
@@ -51,7 +51,7 @@ const SearchBar = () => {
 
       {/* Mobile & Tablet (below md) */}
       <div className="md:hidden flex items-center justify-between gap-3 px-4 py-2">
-        <span className="text-sm opacity-50 text-gray-500 dark:text-slate-950">
+        <span className="text-sm opacity-50 text-slate-900 dark:text-white ">
           Filter by title...
         </span>
         <div className="flex items-center gap-4">
