@@ -10,7 +10,9 @@ export default function Home() {
             <SearchBar />
           </div>
         </div>
-        <Card/>
+        <Card logo="/assets/logos/scoot.svg" 
+        company="Scoot"
+        logoBackground="#e99210" position="Senion Software Engineer" postedAt="2 days ago" contract="Full Time" location="United Kingdom"/>
       </main>
     </div>
   );

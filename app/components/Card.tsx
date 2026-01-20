@@ -1,33 +1,63 @@
 import Image from "next/image";
 
-const Card = () => {
+interface CardProps {
+  logo: string;
+  company: string;
+  logoBackground: string;
+  position: string;
+  postedAt: string;
+  contract: string;
+  location: string;
+}
+
+const Card = ({
+  logo,
+  company,
+  logoBackground,
+  position,
+  postedAt,
+  contract,
+  location,
+}: CardProps ) => {
   return (
     <div className="mt-10 w-full md:max-w-[350px]">
-      <div className="ml-6">
+      {/* Logo container with dynamic background */}
+      <div
+        className="ml-8 md:ml-4 w-12 h-12 rounded-[16px] relative"
+        style={{ backgroundColor: logoBackground }}
+      >
         <Image
-          src="assets/logos/scoot.svg"
-          width={40}
-          height={12}
-          alt="company logo"
-          className="bg-red-500 py-2 px-2  rounded-4xl"
+          src={logo}
+          fill
+          alt={`${company} logo`}
+          className="object-contain p-2"
         />
       </div>
-      <div className="bg-white dark:bg-slate-900 rounded-[6px] pl-6 pb-6 pt-8">
-        <div className="flex items-center pb-2">
+
+      {/* Card content */}
+      <div className="bg-white dark:bg-slate-900 rounded-[6px] pl-8 md:pl-4 pb-6 pt-16 -mt-6">
+        {/* Meta info row */}
+        <div className="flex items-center gap-3 pb-2">
           <p className="text-slate-500 dark:text-slate-500 text-[16px]">
-            2 day ago
+            {postedAt}
           </p>
           <div className="bg-slate-700 w-1 h-1 rounded-full" />
           <p className="text-slate-500 dark:text-slate-500 text-[16px]">
-            Full time
+            {contract}
           </p>
         </div>
+
+        {/* Position title */}
         <p className="text-slate-900 dark:text-slate-50 text-lg font-bold pb-2">
-          Senior Software Engineer
+          {position}
         </p>
-        <p className="text-slate-500 dark:text-slate-500 pb-8">Scoot</p>
+
+        {/* Company name */}
+        <p className="text-slate-500 dark:text-slate-500 pb-8">{company}</p>
+
+        {/* Location */}
         <p className="text-indigo-500 dark:text-indigo-500 text-sm font-bold">
-          United Kingdom
+          {location}
         </p>
       </div>
     </div>
