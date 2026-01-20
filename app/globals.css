@@ -7,9 +7,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --background: #F4F6F8;
     --text-primary: #19202D;
-  --text-secondary: #6E8098;
-  --text-muted: #9DAEC2;
+    --text-secondary: #6E8098;
+    --text-muted: #9DAEC2;
   }
 }
 
@@ -66,12 +67,12 @@ html.dark {
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --background: #F4F6F8;
+  --foreground: #19202D;
+  --card: #FFFFFF;
+  --card-foreground: #19202D;
+  --popover: #FFFFFF;
+  --popover-foreground: #19202D;
   --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
