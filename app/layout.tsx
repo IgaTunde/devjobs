@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={` ${kumbhSans.variable} antialiased min-h-screen `}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <div className="px-4 sm:px-6 lg:px-24 transition-all duration-300">{children}</div>
+          <div className="px-6 sm:px-6 lg:px-24 transition-all duration-300">{children}</div>
         </ThemeProvider>
       </body>
     </html>

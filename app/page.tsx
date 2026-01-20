@@ -1,3 +1,4 @@
+import Card from "./components/Card";
 import SearchBar from "./components/SearchBar";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
             <SearchBar />
           </div>
         </div>
+        <Card/>
       </main>
     </div>
   );

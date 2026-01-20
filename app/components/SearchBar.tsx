@@ -4,7 +4,7 @@ import CustomCheckbox from "./CustomCheckbox";
 
 const SearchBar = () => {
   return (
-    <div className="w-full bg-white dark:bg-slate-900 rounded-md shadow-sm overflow-hidden z-50 lg:mx-0 px-4">
+    <div className="w-full bg-white dark:bg-slate-900 rounded-md shadow-sm overflow-hidden z-50 lg:mx-0 px-2 md:px-4">
       {/* Desktop (md and up) */}
       <div className="hidden md:flex items-stretch justify-between">
         {/* Title / search */}
