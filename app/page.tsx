@@ -1,4 +1,5 @@
 import Card from "./components/Card";
+import JobsList from "./components/JobsList";
 import SearchBar from "./components/SearchBar";
 
 export default function Home() {
@@ -10,9 +11,7 @@ export default function Home() {
             <SearchBar />
           </div>
         </div>
-        <Card logo="/assets/logos/scoot.svg" 
-        company="Scoot"
-        logoBackground="#e99210" position="Senion Software Engineer" postedAt="2 days ago" contract="Full Time" location="United Kingdom"/>
+        <JobsList/>
       </main>
     </div>
   );
