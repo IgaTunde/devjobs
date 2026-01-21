@@ -43,7 +43,9 @@ const JobsList = () => {
         <Card key={job.id} {...job} />
       ))}
     </div>
+    <div className="py-10">
       <Button title="Learn More"/>
+    </div>
     </>
   );
 };
