@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import CustomCheckbox from "./CustomCheckbox";
+import Button from "./Button";
+
 
 const SearchBar = () => {
   return (
@@ -42,10 +44,8 @@ const SearchBar = () => {
           />
           {/* checkbox for tablet */}
           <CustomCheckbox label="Full Time" className=" lg:hidden" />
-
-          <button className="text-sm text-white font-bold bg-indigo-500 rounded-md py-2 lg:px-8 md:px-4 hover:bg-indigo-300">
-            Search
-          </button>
+          
+          <Button title="Search"/>
         </div>
       </div>
 
