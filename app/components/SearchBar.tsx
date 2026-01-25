@@ -116,7 +116,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
             type="text"
             value={filters.title}
             onChange={handleTitleChange}
-            onKeyPress={handleKeyPress}
+            onKeyUp={handleKeyPress}
             placeholder="Filter by title..."
             className="text-sm opacity-50 text-slate-900 dark:text-white bg-transparent outline-none flex-1 focus:opacity-100"
           />
@@ -187,11 +187,11 @@ const MobileFilterModal = ({
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-6 md:hidden"
+      className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-6 md:hidden"
       onClick={onClose}
     >
       <div
-        className="bg-white dark:bg-slate-900 rounded-md w-full max-w-md p-6 space-y-6"
+        className="bg-white dark:bg-slate-900 rounded-md w-full max-w-md p-6 space-y-6 z-50"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Location Filter */}
@@ -206,7 +206,7 @@ const MobileFilterModal = ({
             type="text"
             value={filters.location}
             onChange={onLocationChange}
-            onKeyPress={handleKeyPress}
+            onKeyUp={handleKeyPress}
             placeholder="Filter by location..."
             className="text-sm text-slate-900 dark:text-white bg-transparent outline-none w-full placeholder:opacity-50"
           />
