@@ -1,17 +1,37 @@
 "use client";
 import { useState } from "react";
 
+interface CustomCheckboxProps {
+  label: string;
+  className?: string;
+  checked?: boolean;
+  onChange?: (checked: boolean) => void;
+}
+
 const CustomCheckbox = ({
   label,
   className = "",
-}: {
-  label: string;
-  className?: string;
-}) => {
-  const [isChecked, setIsChecked] = useState(false);
+  checked: controlledChecked,
+  onChange,
+}: CustomCheckboxProps) => {
+  // Use controlled state if provided, otherwise use internal state
+  const isControlled = controlledChecked !== undefined;
+  const [internalChecked, setInternalChecked] = useState(false);
+
+  const isChecked = isControlled ? controlledChecked : internalChecked;
 
   const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(e.target.checked);
+    const newChecked = e.target.checked;
+
+    // If controlled, call onChange callback
+    if (onChange) {
+      onChange(newChecked);
+    }
+
+    // If uncontrolled, update internal state
+    if (!isControlled) {
+      setInternalChecked(newChecked);
+    }
   };
 
   return (
@@ -32,7 +52,7 @@ const CustomCheckbox = ({
             ${
               isChecked
                 ? "bg-indigo-500 border-indigo-500"
-                : "bg-slate-200 dark:bg-[#979797] opacity-100  hover:border-indigo-500 hover:bg-indigo-50"
+                : "bg-slate-200 dark:bg-[#979797] opacity-100 hover:border-indigo-500 hover:bg-indigo-50"
             }`}
         >
           {/* Checkmark */}
