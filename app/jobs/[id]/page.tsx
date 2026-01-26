@@ -58,9 +58,9 @@ export default function JobDetailsPage() {
   }
 
   return (
-    <div className="max-w-[730px] mx-auto  py-8">
+    <div className="max-w-182.5 mx-auto  py-8 relative">
       {/* Header Card */}
-      <div className="bg-white dark:bg-slate-900 rounded-r-md rounded-bl-md rounded-tl-md md:rounded-tl-none  mb-8 pb-10 md:pb-0">
+      <div className="relative bg-white dark:bg-slate-900 rounded-r-md rounded-bl-md rounded-tl-md md:rounded-tl-none -mt-13 z-50 mb-8 pb-10 md:pb-0">
         <div className="flex flex-col items-center md:flex-row md:items-center gap-6 pr-8">
           {/* Logo */}
           <div
