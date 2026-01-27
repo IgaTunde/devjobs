@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface CardProps {
-  id: string | number; // Add id prop for routing
+  id: string | number; 
   logo: string;
   company: string;
   logoBackground: string;
@@ -25,7 +25,7 @@ const Card = ({
   return (
     <Link
       href={`/jobs/${id}`}
-      className="block mt-10 w-full md:max-w-[350px] group transition-transform hover:scale-105 cursor-pointer"
+      className="block mt-10 w-full md:max-w-87.5 group transition-transform hover:scale-105 cursor-pointer"
     >
       {/* Logo container with dynamic background */}
       <div

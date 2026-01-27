@@ -53,7 +53,7 @@ const JobsList = ({ filters }: JobsListProps) => {
   // Error state
   if (isError) {
     return (
-      <div className="flex justify-center items-center min-h-[400px]">
+      <div className="flex justify-center items-center min-h-100">
         <p className="text-lg text-red-500">
           Error: {error?.message || "Failed to load jobs"}
         </p>
@@ -64,7 +64,7 @@ const JobsList = ({ filters }: JobsListProps) => {
   // Empty state - no jobs at all
   if (!jobs || jobs.length === 0) {
     return (
-      <div className="flex justify-center items-center min-h-[400px]">
+      <div className="flex justify-center items-center min-h-100">
         <p className="text-lg text-slate-500 dark:text-slate-400">
           No jobs available
         </p>
@@ -75,7 +75,7 @@ const JobsList = ({ filters }: JobsListProps) => {
   // No results state - filters didn't match anything
   if (filteredJobs.length === 0) {
     return (
-      <div className="flex flex-col justify-center items-center min-h-[400px] gap-4">
+      <div className="flex flex-col justify-center items-center min-h-100 gap-4">
         <p className="text-lg text-slate-500 dark:text-slate-400">
           No jobs found matching your criteria
         </p>
