@@ -3,7 +3,6 @@
 import { useParams, useRouter } from "next/navigation";
 import { useJobs } from "@/app/hooks/useJobs";
 import Image from "next/image";
-import Link from "next/link";
 import Button from "@/app/components/Button";
 
 export default function JobDetailsPage() {
@@ -65,7 +64,7 @@ export default function JobDetailsPage() {
           <div className="flex flex-col items-center md:flex-row md:items-center gap-6 pr-8">
             {/* Logo */}
             <div
-              className="w-20 h-20 md:h-[140px] md:w-[140px] rounded-[20px] md:rounded-none md:rounded-bl-md flex items-center justify-center shrink-0 -mt-10 z-50 md:mt-0"
+              className="w-20 h-20 md:h-35 md:w-35 rounded-4xl md:rounded-none md:rounded-bl-md flex items-center justify-center shrink-0 -mt-10 z-50 md:mt-0"
               style={{ backgroundColor: job.logoBackground }}
             >
               <Image
