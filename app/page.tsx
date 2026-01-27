@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className="">
-      <main className="">
+      <main className="px-6 sm:px-6 lg:px-24 transition-all duration-300">
         <div className="flex justify-center items-center">
           <div className="w-full -mt-7 md:-mt-8 z-50">
             <SearchBar onSearch={handleSearch} />

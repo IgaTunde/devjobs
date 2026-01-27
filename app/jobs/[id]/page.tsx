@@ -58,160 +58,162 @@ export default function JobDetailsPage() {
   }
 
   return (
-    <div className="max-w-182.5 mx-auto  py-8 relative">
-      {/* Header Card */}
-      <div className="relative bg-white dark:bg-slate-900 rounded-r-md rounded-bl-md rounded-tl-md md:rounded-tl-none -mt-13 md:-mt-18 z-50 mb-8 pb-10 md:pb-0">
-        <div className="flex flex-col items-center md:flex-row md:items-center gap-6 pr-8">
-          {/* Logo */}
-          <div
-            className="w-20 h-20 md:h-[140px] md:w-[140px] rounded-[20px] md:rounded-none md:rounded-bl-md flex items-center justify-center shrink-0 -mt-10 z-50 md:mt-0"
-            style={{ backgroundColor: job.logoBackground }}
-          >
-            <Image
-              src={job.logo}
-              width={60}
-              height={60}
-              alt={`${job.company} logo`}
-              className="object-contain"
-            />
+    <>
+      <div className="max-w-182.5 mx-auto  py-8 relative px-6">
+        {/* Header Card */}
+        <div className="relative bg-white dark:bg-slate-900 rounded-r-md rounded-bl-md rounded-tl-md md:rounded-tl-none -mt-13 md:-mt-18 z-50 mb-8 pb-10 md:pb-0">
+          <div className="flex flex-col items-center md:flex-row md:items-center gap-6 pr-8">
+            {/* Logo */}
+            <div
+              className="w-20 h-20 md:h-[140px] md:w-[140px] rounded-[20px] md:rounded-none md:rounded-bl-md flex items-center justify-center shrink-0 -mt-10 z-50 md:mt-0"
+              style={{ backgroundColor: job.logoBackground }}
+            >
+              <Image
+                src={job.logo}
+                width={60}
+                height={60}
+                alt={`${job.company} logo`}
+                className="object-contain"
+              />
+            </div>
+
+            {/* Company Info */}
+            <div className="flex-1">
+              <h1 className="text-2xl text-center md:text-start font-bold text-slate-900 dark:text-white mb-2">
+                {job.company}
+              </h1>
+              <p className="text-slate-500">{job.website}</p>
+            </div>
+
+            {/* Company Site Button */}
+            <a
+              href={job.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button title="Company Site" />
+            </a>
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <div className="bg-white dark:bg-slate-900 rounded-md p-8">
+          <div className="inline-block md:flex md:items-center md:justify-between md:mb-8">
+            {/* Job Meta */}
+            <div>
+              <div className="flex flex-wrap items-center gap-3 mb-2">
+                <p className="text-slate-500">{job.postedAt}</p>
+                <div className="bg-slate-700 w-1 h-1 rounded-full" />
+                <p className="text-slate-500">{job.contract}</p>
+              </div>
+
+              {/* Position Title */}
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 ">
+                {job.position}
+              </h2>
+
+              <p className="text-indigo-500 font-bold">{job.location}</p>
+            </div>
+
+            {/* Apply Button */}
+            <a
+              href={job.apply}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex mb-8 md:mb-0 mt-12 md:mt-0"
+            >
+              <Button title="Apply Now" className="w-full md:w-auto " />
+            </a>
           </div>
 
-          {/* Company Info */}
-          <div className="flex-1">
-            <h1 className="text-2xl text-center md:text-start font-bold text-slate-900 dark:text-white mb-2">
-              {job.company}
-            </h1>
-            <p className="text-slate-500">{job.website}</p>
+          {/* Description */}
+          <div className="prose prose-slate dark:prose-invert max-w-none mb-8">
+            <p className="text-slate-600 dark:text-slate-400 leading-relaxed whitespace-pre-line">
+              {job.description}
+            </p>
           </div>
 
-          {/* Company Site Button */}
-          <a
-            href={job.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block"
-          >
-            <Button title="Company Site" />
-          </a>
+          {/* Requirements */}
+          {job.requirements && (
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
+                Requirements
+              </h3>
+              {typeof job.requirements === "string" ? (
+                <p className="text-slate-600 dark:text-slate-400">
+                  {job.requirements}
+                </p>
+              ) : (
+                <>
+                  <p className="text-slate-600 dark:text-slate-400 mb-4">
+                    {job.requirements.content}
+                  </p>
+                  {job.requirements.items && (
+                    <ul className="list-disc list-inside space-y-2 marker:text-indigo-500">
+                      {job.requirements.items.map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-slate-600 dark:text-slate-400"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              )}
+            </div>
+          )}
+
+          {/* Role Description */}
+          {job.role && (
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
+                What You Will Do
+              </h3>
+              {typeof job.role === "string" ? (
+                <p className="text-slate-600 dark:text-slate-400">{job.role}</p>
+              ) : (
+                <>
+                  <p className="text-slate-600 dark:text-slate-400 mb-4">
+                    {job.role.content}
+                  </p>
+                  {job.role.items && (
+                    <ol className="list-decimal list-inside space-y-2 marker:text-indigo-500">
+                      {job.role.items.map((item, index) => (
+                        <li
+                          key={index}
+                          className="text-slate-600 dark:text-slate-400"
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ol>
+                  )}
+                </>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="bg-white dark:bg-slate-900 rounded-md p-8">
-        <div className="inline-block md:flex md:items-center md:justify-between md:mb-8">
-          {/* Job Meta */}
-          <div>
-            <div className="flex flex-wrap items-center gap-3 mb-2">
-              <p className="text-slate-500">{job.postedAt}</p>
-              <div className="bg-slate-700 w-1 h-1 rounded-full" />
-              <p className="text-slate-500">{job.contract}</p>
-            </div>
-
-            {/* Position Title */}
-            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 ">
-              {job.position}
-            </h2>
-
-            <p className="text-indigo-500 font-bold">{job.location}</p>
-          </div>
-
-          {/* Apply Button */}
+      <div className="bg-white dark:bg-slate-900">
+        <div className="flex items-center justify-between max-w-182.5 mx-auto py-8 px-6">
+          {/* Position Title */}
+          <h6 className="text-xl font-bold text-slate-900 dark:text-white">
+            {job.position}
+          </h6>
           <a
             href={job.apply}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex mb-8 md:mb-0 mt-12 md:mt-0"
+            className="w-full md:w-auto"
           >
-            <Button title="Apply Now" className="w-full md:w-auto " />
+            <Button title="Apply Now" className="w-full md:w-auto" />
           </a>
         </div>
-
-        {/* Description */}
-        <div className="prose prose-slate dark:prose-invert max-w-none mb-8">
-          <p className="text-slate-600 dark:text-slate-400 leading-relaxed whitespace-pre-line">
-            {job.description}
-          </p>
-        </div>
-
-        {/* Requirements */}
-        {job.requirements && (
-          <div className="mb-8">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
-              Requirements
-            </h3>
-            {typeof job.requirements === "string" ? (
-              <p className="text-slate-600 dark:text-slate-400">
-                {job.requirements}
-              </p>
-            ) : (
-              <>
-                <p className="text-slate-600 dark:text-slate-400 mb-4">
-                  {job.requirements.content}
-                </p>
-                {job.requirements.items && (
-                  <ul className="list-disc list-inside space-y-2 marker:text-indigo-500">
-                    {job.requirements.items.map((item, index) => (
-                      <li
-                        key={index}
-                        className="text-slate-600 dark:text-slate-400"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </>
-            )}
-          </div>
-        )}
-
-        {/* Role Description */}
-        {job.role && (
-          <div className="mb-8">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
-              What You Will Do
-            </h3>
-            {typeof job.role === "string" ? (
-              <p className="text-slate-600 dark:text-slate-400">{job.role}</p>
-            ) : (
-              <>
-                <p className="text-slate-600 dark:text-slate-400 mb-4">
-                  {job.role.content}
-                </p>
-                {job.role.items && (
-                  <ol className="list-decimal list-inside space-y-2 marker:text-indigo-500">
-                    {job.role.items.map((item, index) => (
-                      <li
-                        key={index}
-                        className="text-slate-600 dark:text-slate-400"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ol>
-                )}
-              </>
-            )}
-          </div>
-        )}
-
-        {/* Apply Button (Bottom) */}
-        <a
-          href={job.apply}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block w-full md:w-auto"
-        >
-          <Button title="Apply Now" />
-        </a>
       </div>
-
-      {/* Back Button */}
-      <div className="mt-8">
-        <Link href="/" className="text-indigo-500 hover:underline">
-          ← Back to job listings
-        </Link>
-      </div>
-    </div>
+    </>
   );
 }
