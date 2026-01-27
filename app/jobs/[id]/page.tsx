@@ -98,7 +98,7 @@ export default function JobDetailsPage() {
 
         {/* Main Content */}
         <div className="bg-white dark:bg-slate-900 rounded-md p-8">
-          <div className="inline-block md:flex md:items-center md:justify-between md:mb-8">
+          <div className="block md:flex md:items-center md:justify-between md:mb-8">
             {/* Job Meta */}
             <div>
               <div className="flex flex-wrap items-center gap-3 mb-2">
@@ -108,7 +108,7 @@ export default function JobDetailsPage() {
               </div>
 
               {/* Position Title */}
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 ">
+              <h2 className="text-xl md:text-3xl font-bold text-slate-900 dark:text-white mb-2 ">
                 {job.position}
               </h2>
 
@@ -120,9 +120,9 @@ export default function JobDetailsPage() {
               href={job.apply}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex mb-8 md:mb-0 mt-12 md:mt-0"
+              className="flex mb-8 md:mb-0 mt-12 md:mt-0 w-full"
             >
-              <Button title="Apply Now" className="w-full md:w-auto " />
+              <Button title="Apply Now" className="w-full md:w-auto" />
             </a>
           </div>
 
@@ -200,7 +200,7 @@ export default function JobDetailsPage() {
       <div className="bg-white dark:bg-slate-900">
         <div className="flex items-center justify-between max-w-182.5 mx-auto py-8 px-6">
           {/* Position Title */}
-          <h6 className="text-xl font-bold text-slate-900 dark:text-white">
+          <h6 className="text-xl font-bold text-slate-900 dark:text-white hidden md:block">
             {job.position}
           </h6>
           <a
