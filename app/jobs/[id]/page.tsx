@@ -64,7 +64,7 @@ export default function JobDetailsPage() {
         <div className="flex flex-col items-center md:flex-row md:items-center gap-6 pr-8">
           {/* Logo */}
           <div
-            className="w-20 h-20 md:h-[140px] md:w-[140px] rounded-[20px] md:rounded-none flex items-center justify-center shrink-0 -mt-10 z-50 md:mt-0"
+            className="w-20 h-20 md:h-[140px] md:w-[140px] rounded-[20px] md:rounded-none md:rounded-bl-md flex items-center justify-center shrink-0 -mt-10 z-50 md:mt-0"
             style={{ backgroundColor: job.logoBackground }}
           >
             <Image
@@ -78,7 +78,7 @@ export default function JobDetailsPage() {
 
           {/* Company Info */}
           <div className="flex-1">
-            <h1 className="text-2xl text-center font-bold text-slate-900 dark:text-white mb-2">
+            <h1 className="text-2xl text-center md:text-start font-bold text-slate-900 dark:text-white mb-2">
               {job.company}
             </h1>
             <p className="text-slate-500">{job.website}</p>
@@ -198,7 +198,7 @@ export default function JobDetailsPage() {
           rel="noopener noreferrer"
           className="inline-block w-full md:w-auto"
         >
-          <Button title="Apply Now"  />
+          <Button title="Apply Now" />
         </a>
       </div>
 
