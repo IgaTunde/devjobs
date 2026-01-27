@@ -98,29 +98,33 @@ export default function JobDetailsPage() {
 
       {/* Main Content */}
       <div className="bg-white dark:bg-slate-900 rounded-md p-8">
-        {/* Job Meta */}
-        <div className="flex flex-wrap items-center gap-3 mb-6">
-          <p className="text-slate-500">{job.postedAt}</p>
-          <div className="bg-slate-700 w-1 h-1 rounded-full" />
-          <p className="text-slate-500">{job.contract}</p>
-          <div className="bg-slate-700 w-1 h-1 rounded-full" />
-          <p className="text-indigo-500 font-bold">{job.location}</p>
+        <div className="inline-block md:flex md:items-center md:justify-between md:mb-8">
+          {/* Job Meta */}
+          <div>
+            <div className="flex flex-wrap items-center gap-3 mb-2">
+              <p className="text-slate-500">{job.postedAt}</p>
+              <div className="bg-slate-700 w-1 h-1 rounded-full" />
+              <p className="text-slate-500">{job.contract}</p>
+            </div>
+
+            {/* Position Title */}
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 ">
+              {job.position}
+            </h2>
+
+            <p className="text-indigo-500 font-bold">{job.location}</p>
+          </div>
+
+          {/* Apply Button */}
+          <a
+            href={job.apply}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex mb-8 md:mb-0 mt-12 md:mt-0"
+          >
+            <Button title="Apply Now" className="w-full md:w-auto " />
+          </a>
         </div>
-
-        {/* Position Title */}
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
-          {job.position}
-        </h2>
-
-        {/* Apply Button */}
-        <a
-          href={job.apply}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block mb-8"
-        >
-          <Button title="Apply Now" />
-        </a>
 
         {/* Description */}
         <div className="prose prose-slate dark:prose-invert max-w-none mb-8">
@@ -145,7 +149,7 @@ export default function JobDetailsPage() {
                   {job.requirements.content}
                 </p>
                 {job.requirements.items && (
-                  <ul className="list-disc list-inside space-y-2">
+                  <ul className="list-disc list-inside space-y-2 marker:text-indigo-500">
                     {job.requirements.items.map((item, index) => (
                       <li
                         key={index}
@@ -175,7 +179,7 @@ export default function JobDetailsPage() {
                   {job.role.content}
                 </p>
                 {job.role.items && (
-                  <ol className="list-decimal list-inside space-y-2">
+                  <ol className="list-decimal list-inside space-y-2 marker:text-indigo-500">
                     {job.role.items.map((item, index) => (
                       <li
                         key={index}

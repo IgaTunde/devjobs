@@ -1,16 +1,18 @@
 interface ButtonProps {
   title: string;
   onClick?: () => void;
+  className?: string;
 }
 
-const Button = ({title, onClick}: ButtonProps) => {
+const Button = ({ title, onClick, className = "" }: ButtonProps) => {
   return (
-    <div className=" justify-self-center ">
-      <button className="text-sm text-white font-bold bg-indigo-500 rounded-md py-3 px-8 hover:bg-indigo-300 " onClick={onClick}>
-        {title}
-      </button>
-    </div>
+    <button
+      className={`text-sm text-white font-bold bg-indigo-500 rounded-md py-3 px-8 hover:bg-indigo-300 transition-colors ${className}`}
+      onClick={onClick}
+    >
+      {title}
+    </button>
   );
-}
+};
 
-export default Button
+export default Button;
